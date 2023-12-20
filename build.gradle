@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.2'
+    id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'com.kogi'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    implementation 'junit:junit:4.12'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation "io.jsonwebtoken:jjwt-api:0.11.5"
+    implementation "io.jsonwebtoken:jjwt-impl:0.11.5"
+    implementation "io.jsonwebtoken:jjwt-jackson:0.11.5"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.0'
+    implementation 'jakarta.mail:jakarta.mail-api:2.0.1'
+
+    implementation 'com.github.AfricasTalkingLtd:africastalking-java:v3.4.11'
+
+}
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
